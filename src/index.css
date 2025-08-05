@@ -1,17 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --saffron-50: #fff9eb;
+  --saffron-100: #ffefc6;
+  --saffron-200: #ffdc88;
+  --saffron-300: #ffc34a;
+  --saffron-400: #ffab20;
+  --saffron-500: #ff9933;
+  --saffron-600: #f97316;
+  --saffron-700: #d65a0e;
+  --saffron-800: #b2440f;
+  --saffron-900: #923a12;
+
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-300: #86efac;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #1e1e1e;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--saffron-50);
+  color: #333;
+}
+
+.font-display {
+  font-family: "Baloo Bhai 2", cursive;
+}
+
+.bg-saffron-50 {
+  background-color: var(--saffron-50);
+}
+.bg-saffron-100 {
+  background-color: var(--saffron-100);
+}
+.bg-saffron-200 {
+  background-color: var(--saffron-200);
+}
+.bg-saffron-300 {
+  background-color: var(--saffron-300);
+}
+.bg-saffron-400 {
+  background-color: var(--saffron-400);
+}
+.bg-saffron-500 {
+  background-color: var(--saffron-500);
+}
+.bg-saffron-600 {
+  background-color: var(--saffron-600);
+}
+
+.text-saffron-500 {
+  color: var(--saffron-500);
+}
+.text-saffron-600 {
+  color: var(--saffron-600);
+}
+.text-saffron-700 {
+  color: var(--saffron-700);
+}
+
+.bg-green-50 {
+  background-color: var(--green-50);
+}
+.bg-green-100 {
+  background-color: var(--green-100);
+}
+.bg-green-200 {
+  background-color: var(--green-200);
+}
+.bg-green-300 {
+  background-color: var(--green-300);
+}
+.bg-green-400 {
+  background-color: var(--green-400);
+}
+.bg-green-500 {
+  background-color: var(--green-500);
+}
+.bg-green-600 {
+  background-color: var(--green-600);
+}
+
+.text-green-500 {
+  color: var(--green-500);
+}
+.text-green-600 {
+  color: var(--green-600);
+}
+.text-green-700 {
+  color: var(--green-700);
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
