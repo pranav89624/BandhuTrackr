@@ -3,10 +3,112 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/icon.webp" />
+  <link rel="icon" type="image/webp" href="/icon.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>React + TypeScript + Tailwind</title>
-  <meta name="description" content="A React + TypeScript + Tailwind application using Vite, by Create Launcher" />
+  
+  <!-- SEO Meta Tags -->
+  <title>BandhuTrackr - Know Your Real Bandhu</title>
+  <meta name="description" content="Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr." />
+  <meta name="keywords" content="social media tracking, follower tracker, unfollow detector, bandhu tracker, instagram followers, social media analytics">
+  <meta name="author" content="Pranav Verma">
+  <meta name="robots" content="index, follow">
+  <!-- I have to UPDATE THIS URL AFTER DEPLOYMENT -->
+  <link rel="canonical" href="https://YOUR_VERCEL_URL/">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BandhuTrackr - Know Your Real Bandhu">
+  <meta property="og:description" content="Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.">
+  <!-- UPDATE THESE URLs AFTER DEPLOYMENT -->
+  <meta property="og:image" content="https://YOUR_VERCEL_URL/icon.webp">
+  <meta property="og:url" content="https://YOUR_VERCEL_URL/">
+  <meta property="og:site_name" content="BandhuTrackr">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@bandhutrackr">
+  <meta name="twitter:title" content="BandhuTrackr - Know Your Real Bandhu">
+  <meta name="twitter:description" content="Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.">
+  <!-- UPDATE THIS URL AFTER DEPLOYMENT -->
+  <meta name="twitter:image" content="https://YOUR_VERCEL_URL/icon.webp">
+  
+  <!-- Additional SEO Tags -->
+  <meta name="theme-color" content="#ff9933">
+  <meta name="application-name" content="BandhuTrackr">
+  <meta name="apple-mobile-web-app-title" content="BandhuTrackr">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BandhuTrackr - Know Your Real Bandhu",
+    "description": "Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.",
+    "url": "https://YOUR_VERCEL_URL",
+    "applicationCategory": "SocialNetworkingApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "author": {
+      "@type": "Individual",
+      "name": "Pranav Verma"
+    }
+  }
+  </script>
+  
+  <!-- Preconnect to Google Fonts for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
+  
+  <!-- Preload critical icon -->
+  <link rel="preload" href="/icon.webp" as="image">
+  
+  <!-- Performance hints -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+  <!-- Critical CSS for above-the-fold content -->
+  <style>
+    /* Critical styles to prevent layout shift */
+    body {
+      margin: 0;
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #fff9eb;
+      color: #333;
+    }
+    
+    #root {
+      min-height: 100vh;
+    }
+    
+    /* Prevent font loading layout shift */
+    .font-display {
+      font-family: "Baloo Bhai 2", "Poppins", cursive;
+    }
+    
+    /* Loading state styles */
+    .loading-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom right, #ffc34a, #22c55e);
+    }
+  </style>
 </head>
 
 <body>
