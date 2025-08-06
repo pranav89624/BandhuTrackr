@@ -161,7 +161,7 @@ export const SECTION_CONTENT: Record<string, SectionContent> = {
     ariaLabel: "Steps to use BandhuTrackr"
   },
   whyBandhuTrackr: {
-    heading: "Why Bandutrachkr? 🎯",
+    heading: "Why BandhuTrackr? 🎯",
     subheading: "Because friendship tracking shouldn't be rocket science, and your privacy shouldn't be a joke.",
     ariaLabel: "Benefits of using BandhuTrackr"
   },

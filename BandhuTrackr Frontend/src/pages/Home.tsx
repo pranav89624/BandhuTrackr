@@ -5,7 +5,7 @@ import HeroSection from "../components/HeroSection";
 
 // Lazy load non-critical components for better performance
 const HowItWorks = lazy(() => import("../components/HowItWorks"));
-const WhyBandutrachkr = lazy(() => import("../components/WhyBandutrachkr"));
+const WhyBandutrachkr = lazy(() => import("../components/WhyBanduTrackr"));
 const FakeDemo = lazy(() => import("../components/FakeDemo"));
 const TechStack = lazy(() => import("../components/TechStack"));
 const Footer = lazy(() => import("../components/Footer"));

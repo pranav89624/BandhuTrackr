@@ -3,14 +3,14 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { BANDHU_TRACKR_BENEFITS, SECTION_CONTENT } from '../constants';
 import type { Benefit } from '../constants/types';
 
-const WhyBandutrachkr: React.FC = React.memo(() => {
+const WhyBandhuTrackr: React.FC = React.memo(() => {
   const prefersReducedMotion = useReducedMotion();
   const { whyBandhuTrackr } = SECTION_CONTENT;
 
   return (
     <section 
       className="py-20"
-      aria-labelledby="why-bandutrachkr-heading"
+      aria-labelledby="why-bandhu-trackr-heading"
       role="region"
     >
       <div className="container mx-auto px-6">
@@ -22,7 +22,7 @@ const WhyBandutrachkr: React.FC = React.memo(() => {
           viewport={{ once: true }}
         >
           <h2 
-            id="why-bandutrachkr-heading"
+            id="why-bandhu-trackr-heading"
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
           >
             {whyBandhuTrackr.heading}
@@ -87,6 +87,6 @@ const WhyBandutrachkr: React.FC = React.memo(() => {
   );
 });
 
-WhyBandutrachkr.displayName = 'WhyBandutrachkr';
+WhyBandhuTrackr.displayName = 'WhyBandhuTrackr';
 
-export default WhyBandutrachkr;
+export default WhyBandhuTrackr;

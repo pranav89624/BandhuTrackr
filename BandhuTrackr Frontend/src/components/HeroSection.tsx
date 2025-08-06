@@ -89,7 +89,7 @@ const HeroSection = () => {
           role="heading"
           aria-level={1}
         >
-          Bandutrachkr
+          BandhuTrackr
         </motion.h1>
 
         <motion.p

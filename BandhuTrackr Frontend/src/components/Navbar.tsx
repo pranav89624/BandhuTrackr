@@ -52,7 +52,7 @@ const Navbar = () => {
         >
           <PiBirdFill className="text-saffron-500 text-xl sm:text-2xl" />
           <h1 className="text-xl sm:text-2xl font-display font-bold text-saffron-600">
-            Bandutrachkr
+            BandhuTrackr
           </h1>
         </motion.div>
 
