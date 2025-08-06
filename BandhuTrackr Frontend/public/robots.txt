@@ -8,9 +8,7 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /*.json$
 
-# Sitemap location - I HAVE TO UPDATE THIS URL AFTER DEPLOYMENT
-# Replace YOUR_VERCEL_URL with your actual deployed URL
-Sitemap: https://YOUR_VERCEL_URL/sitemap.xml
+Sitemap: https://bandhutrackr.vercel.app/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1

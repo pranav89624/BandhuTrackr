@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <!-- I HAVE TO UPDATE THIS URL AFTER DEPLOYMENT -->
-    <!-- Replace YOUR_VERCEL_URL with your actual deployed URL -->
-    <loc>https://YOUR_VERCEL_URL/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <loc>https://bandhutrackr.vercel.app/</loc>
+    <lastmod>2025-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
