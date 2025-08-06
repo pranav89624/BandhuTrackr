@@ -1,0 +1,16 @@
+# robots.txt for BandhuTrackr
+
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the site
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Sitemap location - I HAVE TO UPDATE THIS URL AFTER DEPLOYMENT
+# Replace YOUR_VERCEL_URL with your actual deployed URL
+Sitemap: https://YOUR_VERCEL_URL/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

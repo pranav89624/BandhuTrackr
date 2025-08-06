@@ -1,0 +1,29 @@
+{
+  "name": "BandhuTrackr - Know Your Real Bandhu",
+  "short_name": "BandhuTrackr",
+  "description": "Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff9eb",
+  "theme_color": "#ff9933",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["social", "productivity", "utilities", "social media tracking", "social media management", "follower tracker", "unfollow detector", "social media analytics", "bandhu tracker", "instagram followers"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "id": "bandhutrackr"
+}
