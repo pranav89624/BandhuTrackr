@@ -1,6 +1,9 @@
 import { User, Activity, UserMinus, Users, Shield, Zap, Settings, Heart } from 'lucide-react';
 import type { Step, Benefit, Technology, MockUser, SectionContent, AnimationConfig } from './types';
 
+// Export auth constants
+export * from './auth';
+
 // How It Works Section Constants
 export const HOW_IT_WORKS_STEPS: Step[] = [
   {

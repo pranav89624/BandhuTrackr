@@ -58,3 +58,62 @@ export interface AnimationConfig {
     y: number;
   };
 }
+
+// Auth related types
+export interface AuthContent {
+  login: {
+    heading: string;
+    subheading: string;
+    fields: {
+      email: AuthField;
+      password: AuthField;
+    };
+    button: {
+      text: string;
+      ariaLabel: string;
+    };
+    toggle: {
+      question: string;
+      action: string;
+    };
+  };
+  signup: {
+    heading: string;
+    subheading: string;
+    fields: {
+      name: AuthField;
+      email: AuthField;
+      password: AuthField;
+    };
+    button: {
+      text: string;
+      ariaLabel: string;
+    };
+    toggle: {
+      question: string;
+      action: string;
+    };
+  };
+  decoration: {
+    login: DecorationContent;
+    signup: DecorationContent;
+  };
+}
+
+export interface AuthField {
+  label: string;
+  placeholder: string;
+  errors: {
+    required: string;
+    invalid?: string;
+    minLength?: string;
+  };
+  ariaLabel: string;
+}
+
+export interface DecorationContent {
+  headline: string;
+  subtitle: string;
+  quote: string;
+  ariaLabel: string;
+}
