@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { PiBirdFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -61,7 +62,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
           className="bg-green-500 text-white px-5 py-2 rounded-full font-medium shadow-lg"
         >
-          Get Started
+          <Link to="/auth">Get Started</Link>
         </motion.button>
       </motion.div>
     </motion.nav>

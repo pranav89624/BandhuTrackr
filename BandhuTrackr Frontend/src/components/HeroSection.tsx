@@ -1,6 +1,7 @@
 import { PiBirdFill } from "react-icons/pi";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -124,7 +125,7 @@ const HeroSection = () => {
             aria-label="Start tracking your followers"
             type="button"
           >
-            Track Your Bandhu
+            <Link to="/auth">Track Your Bandhu</Link>
           </motion.button>
         </motion.div>
       </div>
