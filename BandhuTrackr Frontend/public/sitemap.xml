@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bandhutrackr.vercel.app/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Have to add more URLs as I create more pages -->
+  <url>
+    <loc>https://bandhutrackr.vercel.app/auth</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Add future pages here as they are created -->
 </urlset>

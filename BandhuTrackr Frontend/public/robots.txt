@@ -8,7 +8,15 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /*.json$
 
+# Allow auth page for indexing (public login/signup)
+Allow: /auth
+
+# Important pages for crawling
+Allow: /manifest.json
+Allow: /sitemap.xml
+Allow: /icon.webp
+
 Sitemap: https://bandhutrackr.vercel.app/sitemap.xml
 
-# Crawl delay (optional)
+# Crawl delay - reduced for better indexing
 Crawl-delay: 1
