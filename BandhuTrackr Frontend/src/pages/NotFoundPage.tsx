@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Home, ArrowLeft, Search, AlertCircle } from 'lucide-react';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Home, ArrowLeft, Search, AlertCircle } from "lucide-react";
 
 const NotFoundPage: React.FC = () => {
   useEffect(() => {
     // Set document title for SEO
-    document.title = '404 - Page Not Found | BandhuTrackr';
-    
+    document.title = "404 - Page Not Found | BandhuTrackr";
+
     // Add noindex meta tag to prevent search engine indexing
-    const metaNoIndex = document.createElement('meta');
-    metaNoIndex.name = 'robots';
-    metaNoIndex.content = 'noindex, nofollow';
+    const metaNoIndex = document.createElement("meta");
+    metaNoIndex.name = "robots";
+    metaNoIndex.content = "noindex, nofollow";
     document.head.appendChild(metaNoIndex);
 
     // Cleanup function to remove the meta tag when component unmounts
@@ -46,12 +46,8 @@ const NotFoundPage: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-8"
         >
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Oops! Page Nahi Mila! 😅
-          </h2>
-          <p className="text-xl text-gray-600 mb-2">
-            Lagta hai aap galat jagah aa gaye hain...
-          </p>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Oops! Page Nahi Mila! 😅</h2>
+          <p className="text-xl text-gray-600 mb-2">Lagta hai aap galat jagah aa gaye hain...</p>
           <p className="text-lg text-gray-500">
             Don't worry, even the best detectives get lost sometimes! 🧭
           </p>

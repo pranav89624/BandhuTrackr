@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+# Exit on error
+set -e
+
+if [ -d "BandhuTrackr Frontend" ]; then
+  echo "[pre-push] Running typecheck/build in BandhuTrackr Frontend..."
+  npm --prefix "BandhuTrackr Frontend" run -s build
+fi
+
+if [ -d "BandhuTrackr Backend" ]; then
+  echo "[pre-push] Running typecheck/tests in BandhuTrackr Backend..."
+  npm --prefix "BandhuTrackr Backend" run -s test --if-present
+  npm --prefix "BandhuTrackr Backend" run -s typecheck --if-present
+fi
+
+echo "[pre-push] All checks passed."

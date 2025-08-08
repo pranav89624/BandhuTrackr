@@ -1,18 +1,14 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { BANDHU_TRACKR_BENEFITS, SECTION_CONTENT } from '../constants';
-import type { Benefit } from '../constants/types';
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { BANDHU_TRACKR_BENEFITS, SECTION_CONTENT } from "../constants";
+import type { Benefit } from "../constants/types";
 
 const WhyBandhuTrackr: React.FC = React.memo(() => {
   const prefersReducedMotion = useReducedMotion();
   const { whyBandhuTrackr } = SECTION_CONTENT;
 
   return (
-    <section 
-      className="py-20"
-      aria-labelledby="why-bandhu-trackr-heading"
-      role="region"
-    >
+    <section className="py-20" aria-labelledby="why-bandhu-trackr-heading" role="region">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -21,25 +17,23 @@ const WhyBandhuTrackr: React.FC = React.memo(() => {
           transition={prefersReducedMotion ? {} : { duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 
+          <h2
             id="why-bandhu-trackr-heading"
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
           >
             {whyBandhuTrackr.heading}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {whyBandhuTrackr.subheading}
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{whyBandhuTrackr.subheading}</p>
         </motion.div>
 
-        <div 
+        <div
           className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
           role="list"
           aria-label={whyBandhuTrackr.ariaLabel}
         >
           {BANDHU_TRACKR_BENEFITS.map((benefit: Benefit, index: number) => {
             const BenefitIcon = benefit.icon;
-            
+
             return (
               <motion.div
                 key={index}
@@ -53,19 +47,15 @@ const WhyBandhuTrackr: React.FC = React.memo(() => {
                 whileHover={prefersReducedMotion ? {} : { scale: 1.02, y: -5 }}
               >
                 <div className="flex items-center mb-6">
-                  <div 
+                  <div
                     className={`w-14 h-14 rounded-xl bg-gradient-to-r ${benefit.gradient} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}
                     aria-hidden="true"
                   >
                     <BenefitIcon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    {benefit.title}
-                  </h3>
+                  <h3 className="text-xl font-bold text-gray-800">{benefit.title}</h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
               </motion.div>
             );
           })}
@@ -87,6 +77,6 @@ const WhyBandhuTrackr: React.FC = React.memo(() => {
   );
 });
 
-WhyBandhuTrackr.displayName = 'WhyBandhuTrackr';
+WhyBandhuTrackr.displayName = "WhyBandhuTrackr";
 
 export default WhyBandhuTrackr;

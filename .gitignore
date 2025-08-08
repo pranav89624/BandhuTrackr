@@ -1,0 +1,49 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Build outputs
+/dist/
+**/dist/
+/build/
+**/build/
+/.vite/
+**/.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Lock files
+package-lock.json
+**/package-lock.json
+pnpm-lock.yaml
+**/pnpm-lock.yaml
+yarn.lock
+**/yarn.lock
+bun.lockb
+**/bun.lockb
+
+# Env
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Vercel/Deployment
+.vercel/
+
+# Coverage
+coverage/
+**/coverage/
+
+# Misc
+*.local

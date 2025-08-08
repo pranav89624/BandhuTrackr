@@ -1,27 +1,24 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss()
-  ],
+  plugins: [react(), tailwindcss()],
   build: {
     // Performance optimizations
-    target: 'esnext',
-    minify: 'terser',
+    target: "esnext",
+    minify: "terser",
     cssMinify: true,
     rollupOptions: {
       output: {
         // Better code splitting
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          animations: ['framer-motion'],
-          icons: ['react-icons/pi']
-        }
-      }
+          vendor: ["react", "react-dom"],
+          animations: ["framer-motion"],
+          icons: ["react-icons/pi"],
+        },
+      },
     },
     // Optimize chunks
     chunkSizeWarningLimit: 1000,
@@ -29,10 +26,10 @@ export default defineConfig({
   server: {
     // Development optimizations
     hmr: {
-      overlay: false
-    }
+      overlay: false,
+    },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion', 'react-icons/pi']
-  }
-})
+    include: ["react", "react-dom", "framer-motion", "react-icons/pi"],
+  },
+});

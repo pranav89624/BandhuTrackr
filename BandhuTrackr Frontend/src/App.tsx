@@ -1,6 +1,6 @@
 import Home from "./pages/Home";
 import { ErrorBoundary } from "./components";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AuthPage from "./pages/AuthPage";
 import NotFoundPage from "./pages/NotFoundPage";
 

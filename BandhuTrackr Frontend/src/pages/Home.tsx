@@ -16,10 +16,13 @@ const Home = () => {
   // SEO Management
   useSEO({
     title: "BandhuTrackr - Know Your Real Bandhu",
-    description: "Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.",
-    keywords: "social media tracking, follower tracker, unfollow detector, bandhu tracker, instagram followers",
+    description:
+      "Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.",
+    keywords:
+      "social media tracking, follower tracker, unfollow detector, bandhu tracker, instagram followers",
     ogTitle: "BandhuTrackr - Know Your Real Bandhu",
-    ogDescription: "Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.",
+    ogDescription:
+      "Apne the ya nahi? Hum bata denge. Track your social media followers with BandhuTrackr.",
   });
 
   useEffect(() => {
@@ -30,76 +33,65 @@ const Home = () => {
   }, []);
 
   if (isLoading) {
-    return (
-      <LoadingSpinner 
-        size="lg" 
-        fullScreen 
-        message="Loading BandhuTrackr application..."
-      />
-    );
+    return <LoadingSpinner size="lg" fullScreen message="Loading BandhuTrackr application..." />;
   }
 
   return (
     <PageLayout>
       <HeroSection />
-      
+
       {/* How It Works section with lazy loading */}
-      <Suspense fallback={
-        <div className="py-16 bg-white">
-          <LoadingSpinner 
-            message="Loading How It Works section..."
-            className="py-8"
-          />
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="py-16 bg-white">
+            <LoadingSpinner message="Loading How It Works section..." className="py-8" />
+          </div>
+        }
+      >
         <HowItWorks />
       </Suspense>
-      
+
       {/* Why Bandutrachkr section with lazy loading */}
-      <Suspense fallback={
-        <div className="py-16 bg-gray-50">
-          <LoadingSpinner 
-            message="Loading Why Bandutrachkr section..."
-            className="py-8"
-          />
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="py-16 bg-gray-50">
+            <LoadingSpinner message="Loading Why Bandutrachkr section..." className="py-8" />
+          </div>
+        }
+      >
         <WhyBandutrachkr />
       </Suspense>
-      
+
       {/* FakeDemo section with lazy loading */}
-      <Suspense fallback={
-        <div className="py-16 bg-gradient-to-br from-green-50 to-saffron-50">
-          <LoadingSpinner 
-            message="Loading Demo section..."
-            className="py-8"
-          />
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="py-16 bg-gradient-to-br from-green-50 to-saffron-50">
+            <LoadingSpinner message="Loading Demo section..." className="py-8" />
+          </div>
+        }
+      >
         <FakeDemo />
       </Suspense>
-      
+
       {/* TechStack section with lazy loading */}
-      <Suspense fallback={
-        <div className="py-16 bg-white">
-          <LoadingSpinner 
-            message="Loading Tech Stack section..."
-            className="py-8"
-          />
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="py-16 bg-white">
+            <LoadingSpinner message="Loading Tech Stack section..." className="py-8" />
+          </div>
+        }
+      >
         <TechStack />
       </Suspense>
-      
+
       {/* Footer section with lazy loading */}
-      <Suspense fallback={
-        <div className="py-12 bg-gray-900">
-          <LoadingSpinner 
-            message="Loading Footer..."
-            className="py-8"
-          />
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="py-12 bg-gray-900">
+            <LoadingSpinner message="Loading Footer..." className="py-8" />
+          </div>
+        }
+      >
         <Footer />
       </Suspense>
     </PageLayout>

@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion, easeInOut } from 'framer-motion';
-import { Users, Heart, Sparkles } from 'lucide-react';
+import React from "react";
+import { motion, easeInOut } from "framer-motion";
+import { Users, Heart, Sparkles } from "lucide-react";
 import { PiBirdFill } from "react-icons/pi";
 
 interface DecorationPanelProps {
-  mode: 'login' | 'signup';
+  mode: "login" | "signup";
   headline: string;
   subtitle: string;
   quote: string;
@@ -13,8 +13,8 @@ interface DecorationPanelProps {
 const DecorationPanel: React.FC<DecorationPanelProps> = ({ mode, headline, subtitle, quote }) => {
   const iconVariants = {
     initial: { scale: 0, rotate: -180 },
-    animate: { 
-      scale: 1, 
+    animate: {
+      scale: 1,
       rotate: 0,
       y: [0, -10, 0],
       transition: {
@@ -23,11 +23,11 @@ const DecorationPanel: React.FC<DecorationPanelProps> = ({ mode, headline, subti
         y: {
           duration: 3,
           repeat: Infinity,
-          ease: easeInOut
-        }
-      }
+          ease: easeInOut,
+        },
+      },
     },
-    hover: { scale: 1.1, rotate: 10 }
+    hover: { scale: 1.1, rotate: 10 },
   };
 
   return (
@@ -54,7 +54,7 @@ const DecorationPanel: React.FC<DecorationPanelProps> = ({ mode, headline, subti
           animate="animate"
           whileHover="hover"
         >
-          {mode === 'login' ? (
+          {mode === "login" ? (
             <PiBirdFill className="w-20 h-20 mx-auto" />
           ) : (
             <Users className="w-20 h-20 mx-auto" />
@@ -62,7 +62,7 @@ const DecorationPanel: React.FC<DecorationPanelProps> = ({ mode, headline, subti
         </motion.div>
 
         {/* Main Headline */}
-        <motion.h1 
+        <motion.h1
           className="text-4xl md:text-5xl font-bold mb-4"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ const DecorationPanel: React.FC<DecorationPanelProps> = ({ mode, headline, subti
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p 
+        <motion.p
           className="text-xl md:text-2xl mb-8 opacity-90"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -103,27 +103,25 @@ const DecorationPanel: React.FC<DecorationPanelProps> = ({ mode, headline, subti
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <div className="text-6xl mb-2">
-            {mode === 'login' ? '🕵️‍♂️' : '🤝'}
-          </div>
+          <div className="text-6xl mb-2">{mode === "login" ? "🕵️‍♂️" : "🤝"}</div>
           <p className="text-sm opacity-80">
-            {mode === 'login' 
-              ? 'Sherlock Holmes ki tarah investigate karo!' 
-              : 'Naye dost banane ka time!'}
+            {mode === "login"
+              ? "Sherlock Holmes ki tarah investigate karo!"
+              : "Naye dost banane ka time!"}
           </p>
         </motion.div>
 
         {/* Floating Elements */}
         <motion.div
           className="absolute top-1/4 left-8 text-2xl"
-          animate={{ 
+          animate={{
             rotate: [0, 10, -10, 0],
-            scale: [1, 1.1, 1]
+            scale: [1, 1.1, 1],
           }}
-          transition={{ 
+          transition={{
             duration: 4,
             repeat: Infinity,
-            repeatDelay: 2
+            repeatDelay: 2,
           }}
         >
           🎯
@@ -131,14 +129,14 @@ const DecorationPanel: React.FC<DecorationPanelProps> = ({ mode, headline, subti
 
         <motion.div
           className="absolute bottom-1/4 right-8 text-2xl"
-          animate={{ 
+          animate={{
             y: [0, -15, 0],
-            rotate: [0, -5, 5, 0]
+            rotate: [0, -5, 5, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 5,
             repeat: Infinity,
-            repeatDelay: 1
+            repeatDelay: 1,
           }}
         >
           ✨

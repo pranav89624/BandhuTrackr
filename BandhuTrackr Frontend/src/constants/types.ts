@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Type definitions for constant data structures
 
@@ -29,7 +29,7 @@ export interface Technology {
 
 export interface MockUser {
   username: string;
-  status: 'followed' | 'unfollowed';
+  status: "followed" | "unfollowed";
   days: number;
   ariaLabel: string;
 }

@@ -1,18 +1,14 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { TECH_STACK_TECHNOLOGIES, SECTION_CONTENT } from '../constants';
-import type { Technology } from '../constants/types';
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { TECH_STACK_TECHNOLOGIES, SECTION_CONTENT } from "../constants";
+import type { Technology } from "../constants/types";
 
 const TechStack: React.FC = React.memo(() => {
   const prefersReducedMotion = useReducedMotion();
   const { techStack } = SECTION_CONTENT;
 
   return (
-    <section 
-      className="py-20"
-      aria-labelledby="tech-stack-heading"
-      role="region"
-    >
+    <section className="py-20" aria-labelledby="tech-stack-heading" role="region">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -21,18 +17,13 @@ const TechStack: React.FC = React.memo(() => {
           transition={prefersReducedMotion ? {} : { duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 
-            id="tech-stack-heading"
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
-          >
+          <h2 id="tech-stack-heading" className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             {techStack.heading}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {techStack.subheading}
-          </p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">{techStack.subheading}</p>
         </motion.div>
 
-        <div 
+        <div
           className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto"
           role="list"
           aria-label={techStack.ariaLabel}
@@ -49,8 +40,8 @@ const TechStack: React.FC = React.memo(() => {
               viewport={{ once: true }}
               whileHover={prefersReducedMotion ? {} : { y: -2 }}
             >
-              <span 
-                className="text-lg" 
+              <span
+                className="text-lg"
                 aria-hidden="true"
                 role="img"
                 aria-label={`${tech.name} icon`}
@@ -69,15 +60,13 @@ const TechStack: React.FC = React.memo(() => {
           transition={prefersReducedMotion ? {} : { duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-600 text-lg">
-            {techStack.footer}
-          </p>
+          <p className="text-gray-600 text-lg">{techStack.footer}</p>
         </motion.div>
       </div>
     </section>
   );
 });
 
-TechStack.displayName = 'TechStack';
+TechStack.displayName = "TechStack";
 
 export default TechStack;

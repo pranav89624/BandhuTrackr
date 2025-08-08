@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Lock, LogIn, RotateCcw } from 'lucide-react';
-import { AUTH_CONTENT, AUTH_VALIDATION, AUTH_ANIMATIONS } from '../../constants';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { motion } from "framer-motion";
+import { Mail, Lock, LogIn, RotateCcw } from "lucide-react";
+import { AUTH_CONTENT, AUTH_VALIDATION, AUTH_ANIMATIONS } from "../../constants";
 
 interface LoginFormProps {
   onToggleMode: () => void;
@@ -10,13 +10,13 @@ interface LoginFormProps {
 
 const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const emailRef = useRef<HTMLInputElement>(null);
-  const formId = 'login-form';
+  const formId = "login-form";
 
   // Memoize validation function for better performance
   const validateForm = useCallback(() => {
@@ -39,9 +39,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
 
   // Memoize form validity status
   const isFormValid = useMemo(() => {
-    return formData.email.trim() !== '' && 
-           formData.password.trim() !== '' && 
-           Object.keys(errors).length === 0;
+    return (
+      formData.email.trim() !== "" &&
+      formData.password.trim() !== "" &&
+      Object.keys(errors).length === 0
+    );
   }, [formData.email, formData.password, errors]);
 
   useEffect(() => {
@@ -52,43 +54,49 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  }, [errors]);
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({ ...prev, [name]: value }));
 
-  const handleSubmit = useCallback(async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (isSubmitting) return;
-    
-    setIsSubmitting(true);
-    const validationErrors = validateForm();
-    setErrors(validationErrors);
+      // Clear error when user starts typing
+      if (errors[name]) {
+        setErrors((prev) => ({ ...prev, [name]: "" }));
+      }
+    },
+    [errors]
+  );
 
-    if (Object.keys(validationErrors).length === 0) {
-      try {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log('Login attempt:', formData);
-        // Handle successful login here
-      } catch (error) {
-        console.error('Login error:', error);
-      } finally {
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+
+      if (isSubmitting) return;
+
+      setIsSubmitting(true);
+      const validationErrors = validateForm();
+      setErrors(validationErrors);
+
+      if (Object.keys(validationErrors).length === 0) {
+        try {
+          // Simulate API call
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          console.log("Login attempt:", formData);
+          // Handle successful login here
+        } catch (error) {
+          console.error("Login error:", error);
+        } finally {
+          setIsSubmitting(false);
+        }
+      } else {
         setIsSubmitting(false);
       }
-    } else {
-      setIsSubmitting(false);
-    }
-  }, [formData, validateForm, isSubmitting]);
+    },
+    [formData, validateForm, isSubmitting]
+  );
 
   return (
-    <motion.div 
+    <motion.div
       className="w-full max-w-md"
       initial={AUTH_ANIMATIONS.form.initial}
       animate={AUTH_ANIMATIONS.form.animate}
@@ -105,24 +113,21 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
         </p>
       </div>
 
-      <form 
+      <form
         id={formId}
-        onSubmit={handleSubmit} 
-        className="space-y-6" 
+        onSubmit={handleSubmit}
+        className="space-y-6"
         noValidate
         aria-label="Login form"
       >
         {/* Email Field */}
         <div>
-          <label 
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
             {AUTH_CONTENT.login.fields.email.label}
           </label>
           <div className="relative">
-            <Mail 
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" 
+            <Mail
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
               aria-hidden="true"
             />
             <input
@@ -133,18 +138,18 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
               value={formData.email}
               onChange={handleInputChange}
               className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 ${
-                errors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                errors.email ? "border-red-500 bg-red-50" : "border-gray-300"
               }`}
               placeholder={AUTH_CONTENT.login.fields.email.placeholder}
               aria-label={AUTH_CONTENT.login.fields.email.ariaLabel}
-              aria-invalid={errors.email ? 'true' : 'false'}
-              aria-describedby={errors.email ? 'email-error' : undefined}
+              aria-invalid={errors.email ? "true" : "false"}
+              aria-describedby={errors.email ? "email-error" : undefined}
               autoComplete="email"
               required
             />
           </div>
           {errors.email && (
-            <motion.p 
+            <motion.p
               id="email-error"
               className="text-red-500 text-sm mt-1"
               initial={AUTH_ANIMATIONS.field.error.initial}
@@ -159,15 +164,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
 
         {/* Password Field */}
         <div>
-          <label 
-            htmlFor="password"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
             {AUTH_CONTENT.login.fields.password.label}
           </label>
           <div className="relative">
-            <Lock 
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" 
+            <Lock
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
               aria-hidden="true"
             />
             <input
@@ -177,18 +179,18 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
               value={formData.password}
               onChange={handleInputChange}
               className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 ${
-                errors.password ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                errors.password ? "border-red-500 bg-red-50" : "border-gray-300"
               }`}
               placeholder={AUTH_CONTENT.login.fields.password.placeholder}
               aria-label={AUTH_CONTENT.login.fields.password.ariaLabel}
-              aria-invalid={errors.password ? 'true' : 'false'}
-              aria-describedby={errors.password ? 'password-error' : undefined}
+              aria-invalid={errors.password ? "true" : "false"}
+              aria-describedby={errors.password ? "password-error" : undefined}
               autoComplete="current-password"
               required
             />
           </div>
           {errors.password && (
-            <motion.p 
+            <motion.p
               id="password-error"
               className="text-red-500 text-sm mt-1"
               initial={AUTH_ANIMATIONS.field.error.initial}
@@ -207,8 +209,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
           disabled={isSubmitting || !isFormValid}
           className={`w-full py-3 px-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-200 ${
             isSubmitting || !isFormValid
-              ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transform hover:scale-105'
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transform hover:scale-105"
           } text-white`}
           whileHover={!isSubmitting && isFormValid ? AUTH_ANIMATIONS.button.hover : {}}
           whileTap={!isSubmitting && isFormValid ? AUTH_ANIMATIONS.button.tap : {}}
@@ -216,12 +218,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
           aria-describedby="login-status"
         >
           <LogIn className="w-5 h-5" aria-hidden="true" />
-          <span>{isSubmitting ? 'Logging in...' : AUTH_CONTENT.login.button.text}</span>
+          <span>{isSubmitting ? "Logging in..." : AUTH_CONTENT.login.button.text}</span>
         </motion.button>
 
         {/* Screen reader status */}
         <div id="login-status" className="sr-only" aria-live="polite">
-          {isSubmitting ? 'Logging you in, please wait...' : ''}
+          {isSubmitting ? "Logging you in, please wait..." : ""}
         </div>
       </form>
 
@@ -233,13 +235,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isAnimating }) => {
           onClick={onToggleMode}
           disabled={isAnimating}
           className={`text-orange-500 hover:text-orange-600 font-semibold flex items-center justify-center space-x-2 mx-auto transition-all duration-200 ${
-            isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
+            isAnimating ? "opacity-50 cursor-not-allowed" : "hover:scale-105"
           }`}
           whileHover={!isAnimating ? { rotate: 5 } : {}}
           whileTap={!isAnimating ? { rotate: -5 } : {}}
           aria-label="Switch to signup form"
         >
-          <RotateCcw className={`w-4 h-4 ${isAnimating ? 'animate-spin' : ''}`} aria-hidden="true" />
+          <RotateCcw
+            className={`w-4 h-4 ${isAnimating ? "animate-spin" : ""}`}
+            aria-hidden="true"
+          />
           <span>{AUTH_CONTENT.login.toggle.action}</span>
         </motion.button>
       </div>

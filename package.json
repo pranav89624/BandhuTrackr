@@ -1,0 +1,28 @@
+{
+  "name": "bandhutrackr-root",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Root config for Husky + lint-staged to enforce code quality across all packages",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint .",
+    "format": "prettier . -w"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "BandhuTrackr Frontend/**/*.{js,jsx,ts,tsx}": [
+      "npm --prefix \"BandhuTrackr Frontend\" exec eslint -- --config \"BandhuTrackr Frontend/eslint.config.js\" --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss,html,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

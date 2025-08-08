@@ -13,7 +13,7 @@ const Navbar = () => {
   useEffect(() => {
     // Throttle scroll events for better performance
     let ticking = false;
-    
+
     const throttledHandleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
@@ -41,16 +41,11 @@ const Navbar = () => {
     >
       <motion.div
         className={`transition-all duration-500 px-4 flex justify-between items-center mx-auto ${
-          scrolled
-            ? "lg:max-w-4xl lg:rounded-4xl xl:max-w-5xl 2xl:max-w-6xl"
-            : "max-w-full"
+          scrolled ? "lg:max-w-4xl lg:rounded-4xl xl:max-w-5xl 2xl:max-w-6xl" : "max-w-full"
         }`}
         layout
       >
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="flex items-center space-x-2"
-        >
+        <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
           <PiBirdFill className="text-saffron-500 text-xl sm:text-2xl" />
           <h1 className="text-xl sm:text-2xl font-display font-bold text-saffron-600">
             BandhuTrackr
