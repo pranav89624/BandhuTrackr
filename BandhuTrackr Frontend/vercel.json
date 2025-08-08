@@ -13,7 +13,6 @@
       "destination": "/index.html"
     }
   ],
-  "errorDocument": "404.html",
   "headers": [
     {
       "source": "/404.html",
