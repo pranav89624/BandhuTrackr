@@ -22,6 +22,46 @@
   --green-700: #15803d;
   --green-800: #166534;
   --green-900: #14532d;
+
+  /* Light mode colors */
+  --bg-primary: var(--saffron-50);
+  --bg-secondary: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --saffron-50: #1a1a1a;
+  --saffron-100: #2d2d2d;
+  --saffron-200: #404040;
+  --saffron-300: #525252;
+  --saffron-400: #737373;
+  --saffron-500: #a3a3a3;
+  --saffron-600: #f97316;
+  --saffron-700: #ea580c;
+  --saffron-800: #dc2626;
+  --saffron-900: #b91c1c;
+
+  --green-50: #0f1419;
+  --green-100: #1a2332;
+  --green-200: #253447;
+  --green-300: #30455d;
+  --green-400: #3b5773;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
+
+  /* Dark mode colors */
+  --bg-primary: #0f0f23;
+  --bg-secondary: #1a1a2e;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --border-color: #374151;
+  --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -29,12 +69,180 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--saffron-50);
-  color: #333;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .font-display {
   font-family: "Baloo Bhai 2", cursive;
+}
+
+/* Saffron color utilities */
+.bg-saffron-50 {
+  background-color: var(--saffron-50);
+}
+.bg-saffron-100 {
+  background-color: var(--saffron-100);
+}
+.bg-saffron-200 {
+  background-color: var(--saffron-200);
+}
+.bg-saffron-300 {
+  background-color: var(--saffron-300);
+}
+.bg-saffron-400 {
+  background-color: var(--saffron-400);
+}
+.bg-saffron-500 {
+  background-color: var(--saffron-500);
+}
+.bg-saffron-600 {
+  background-color: var(--saffron-600);
+}
+.bg-saffron-700 {
+  background-color: var(--saffron-700);
+}
+.bg-saffron-800 {
+  background-color: var(--saffron-800);
+}
+.bg-saffron-900 {
+  background-color: var(--saffron-900);
+}
+
+.text-saffron-50 {
+  color: var(--saffron-50);
+}
+.text-saffron-100 {
+  color: var(--saffron-100);
+}
+.text-saffron-200 {
+  color: var(--saffron-200);
+}
+.text-saffron-300 {
+  color: var(--saffron-300);
+}
+.text-saffron-400 {
+  color: var(--saffron-400);
+}
+.text-saffron-500 {
+  color: var(--saffron-500);
+}
+.text-saffron-600 {
+  color: var(--saffron-600);
+}
+.text-saffron-700 {
+  color: var(--saffron-700);
+}
+.text-saffron-800 {
+  color: var(--saffron-800);
+}
+.text-saffron-900 {
+  color: var(--saffron-900);
+}
+
+/* Green color utilities */
+.bg-green-50 {
+  background-color: var(--green-50);
+}
+.bg-green-100 {
+  background-color: var(--green-100);
+}
+.bg-green-200 {
+  background-color: var(--green-200);
+}
+.bg-green-300 {
+  background-color: var(--green-300);
+}
+.bg-green-400 {
+  background-color: var(--green-400);
+}
+.bg-green-500 {
+  background-color: var(--green-500);
+}
+.bg-green-600 {
+  background-color: var(--green-600);
+}
+.bg-green-700 {
+  background-color: var(--green-700);
+}
+.bg-green-800 {
+  background-color: var(--green-800);
+}
+.bg-green-900 {
+  background-color: var(--green-900);
+}
+
+.text-green-50 {
+  color: var(--green-50);
+}
+.text-green-100 {
+  color: var(--green-100);
+}
+.text-green-200 {
+  color: var(--green-200);
+}
+.text-green-300 {
+  color: var(--green-300);
+}
+.text-green-400 {
+  color: var(--green-400);
+}
+.text-green-500 {
+  color: var(--green-500);
+}
+.text-green-600 {
+  color: var(--green-600);
+}
+.text-green-700 {
+  color: var(--green-700);
+}
+.text-green-800 {
+  color: var(--green-800);
+}
+.text-green-900 {
+  color: var(--green-900);
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+/* Custom background and text utilities for theming */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.border-theme {
+  border-color: var(--border-color);
+}
+
+.shadow-theme {
+  box-shadow:
+    0 4px 6px -1px var(--shadow-color),
+    0 2px 4px -1px var(--shadow-color);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .bg-saffron-50 {
