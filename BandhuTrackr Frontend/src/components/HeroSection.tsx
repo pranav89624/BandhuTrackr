@@ -42,11 +42,11 @@ const HeroSection = () => {
       >
         {/* Decorative elements */}
         <div
-          className="absolute top-10 -right-20 w-64 h-64 rounded-full bg-saffron-200 opacity-40"
+          className="absolute top-10 -right-20 w-64 h-64 rounded-full bg-saffron-200 dark:bg-saffron-800/30 opacity-40"
           aria-hidden="true"
         />
         <div
-          className="absolute bottom-20 left-10 w-32 h-32 rounded-full bg-green-200 opacity-40"
+          className="absolute bottom-20 left-10 w-32 h-32 rounded-full bg-green-200 dark:bg-green-800/30 opacity-40"
           aria-hidden="true"
         />
 
@@ -82,7 +82,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.4 }}
-            className="text-5xl md:text-7xl font-display font-bold text-saffron-600 mb-4"
+            className="text-5xl md:text-7xl font-display font-bold text-saffron-600 dark:text-saffron-400 mb-4"
             style={{ minHeight: "120px" }}
             id="main-heading"
             role="heading"
@@ -95,7 +95,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.6 }}
-            className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl"
+            className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl"
             role="doc-subtitle"
           >
             "Apne the ya nahi? Hum bata denge."
@@ -105,7 +105,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.7 }}
-            className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl"
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl"
           >
             Track your followers and find out who's been playing games with the follow-unfollow
             strategy. It's time to clean house! 🧹

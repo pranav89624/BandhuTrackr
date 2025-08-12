@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { PiBirdFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,6 +28,7 @@ const Navbar = () => {
     window.addEventListener("scroll", throttledHandleScroll, { passive: true });
     return () => window.removeEventListener("scroll", throttledHandleScroll);
   }, [handleScroll]);
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -34,7 +36,7 @@ const Navbar = () => {
       transition={{ type: "keyframes" }}
       className={`sticky top-0 z-50 py-3 transition-colors duration-300${
         scrolled
-          ? "bg-white/80 backdrop-blur-xs shadow-md lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl lg:rounded-4xl mx-auto"
+          ? "dark:bg-gray-900/80 bg-white/80 backdrop-blur-xs shadow-md lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl lg:rounded-4xl mx-auto"
           : "bg-transparent"
       }`}
       layout
@@ -47,18 +49,21 @@ const Navbar = () => {
       >
         <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
           <PiBirdFill className="text-saffron-500 text-xl sm:text-2xl" />
-          <h1 className="text-xl sm:text-2xl font-display font-bold text-saffron-600">
+          <h1 className="text-xl sm:text-2xl font-display font-bold text-saffron-600 dark:text-saffron-400">
             BandhuTrackr
           </h1>
         </motion.div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-green-500 text-white px-5 py-2 rounded-full font-medium shadow-lg"
-        >
-          <Link to="/auth">Get Started</Link>
-        </motion.button>
+        <div className="flex items-center space-x-3">
+          <ThemeToggle />
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-medium shadow-lg transition-colors duration-200"
+          >
+            <Link to="/auth">Get Started</Link>
+          </motion.button>
+        </div>
       </motion.div>
     </motion.nav>
   );
