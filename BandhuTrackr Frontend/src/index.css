@@ -30,25 +30,20 @@
   --text-secondary: #666666;
   --border-color: #e5e7eb;
   --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* Component-specific theme variables */
+  --dropdown-bg: #ffffff;
+  --dropdown-border: #e5e7eb;
+  --navbar-bg-scrolled: rgba(255, 255, 255, 0.8);
 }
 
 .dark {
-  --saffron-50: #1a1a1a;
-  --saffron-100: #2d2d2d;
-  --saffron-200: #404040;
-  --saffron-300: #525252;
-  --saffron-400: #737373;
-  --saffron-500: #a3a3a3;
+  /* Keep only our custom saffron and green colors, don't override Tailwind's grays */
   --saffron-600: #f97316;
   --saffron-700: #ea580c;
   --saffron-800: #dc2626;
   --saffron-900: #b91c1c;
 
-  --green-50: #0f1419;
-  --green-100: #1a2332;
-  --green-200: #253447;
-  --green-300: #30455d;
-  --green-400: #3b5773;
   --green-500: #22c55e;
   --green-600: #16a34a;
   --green-700: #15803d;
@@ -62,6 +57,11 @@
   --text-secondary: #9ca3af;
   --border-color: #374151;
   --shadow-color: rgba(0, 0, 0, 0.3);
+
+  /* Component-specific theme variables */
+  --dropdown-bg: #1f2937;
+  --dropdown-border: #374151;
+  --navbar-bg-scrolled: rgba(17, 24, 39, 0.8);
 }
 
 body {
