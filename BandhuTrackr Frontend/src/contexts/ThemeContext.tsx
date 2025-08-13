@@ -47,8 +47,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       // Remove existing theme classes
       root.classList.remove("light", "dark");
 
-      // Add the appropriate theme class
-      root.classList.add(actualTheme);
+      // Add the dark class only when in dark mode (Tailwind requirement)
+      if (actualTheme === "dark") {
+        root.classList.add("dark");
+      }
 
       // Update CSS custom properties for dynamic theming
       if (actualTheme === "dark") {

@@ -36,9 +36,12 @@ const Navbar = () => {
       transition={{ type: "keyframes" }}
       className={`sticky top-0 z-50 py-3 transition-colors duration-300${
         scrolled
-          ? "dark:bg-gray-900/80 bg-white/80 backdrop-blur-xs shadow-md lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl lg:rounded-4xl mx-auto"
-          : "bg-transparent"
+          ? " backdrop-blur-xs shadow-md lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl lg:rounded-4xl mx-auto"
+          : " bg-transparent"
       }`}
+      style={{
+        backgroundColor: scrolled ? "var(--navbar-bg-scrolled)" : "transparent",
+      }}
       layout
     >
       <motion.div
